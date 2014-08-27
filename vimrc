@@ -24,11 +24,11 @@ lan mes ko_KR.utf8
 
 if has("gui_running")
 	if has("gui_gtk2")
-		:set guifont=Consolas\ 9
-		:set guifontwide=Gulim\ 9,UnDotum\ 9
+		set guifont=Consolas\ 9
+		set guifontwide=Gulim\ 9,UnDotum\ 9
 	elseif has("gui_win32")
-		:set guifont=Consolas:h9:cANSI
-		:set guifontwide=DotumChe:h9:cDEFAULT
+		set guifont=Consolas:h9:cANSI
+		set guifontwide=DotumChe:h9:cDEFAULT
 	endif
 endif
 
@@ -56,14 +56,23 @@ set showmatch
 
 set title
 
-"ESC 한글모드 해제
-"set imactivatekey=S-space " available when compiled with +xim and +GUI_GTK
-"set imcmdline             " available when compiled with +xim, +multi_byte_ime or global-ime
-"set noimdisable           " available when compiled with +xim, +multi_byte_ime or global-ime
-"set iminsert=2            " 2 is available when compiled with +xim, +multi_byte_ime or global-ime
-"set imsearch=-1						" use value of 'iminsert'
-"
-"inoremap <ESC> <ESC>:set iminsert=0<CR>
-inoremap <ESC> <ESC>:set imdisable<CR>
-nnoremap i :set noimd<CR>i
+set paste
+
+" tab navigation like firefox
+nnoremap <C-S-tab>     :tabprevious<CR>
+nnoremap <C-tab>       :tabnext<CR>
+nnoremap <C-t>         :tabnew<CR>
+nnoremap <C-PageDown>  :tabnext<CR>
+nnoremap <C-PageUp>    :tabprevious<CR>
+inoremap <C-S-tab>     <Esc>:tabprevious<CR>i
+inoremap <C-tab>       <Esc>:tabnext<CR>i
+inoremap <C-t>         <Esc>:tabnew<CR>i
+inoremap <C-PageDown>  <Esc>:tabnext<CR>i
+inoremap <C-PageUp>    <Esc>:tabprevious<CR>i
+nnoremap <C-Insert>    :tabnew<CR>
+nnoremap <C-Delete>    :tabclose<CR>
+
+" open files always in new tabs
+autocmd VimEnter * tab all
+autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
 
