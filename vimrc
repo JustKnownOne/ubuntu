@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()
 filetype plugin indent on
@@ -73,6 +74,11 @@ nnoremap <C-Insert>    :tabnew<CR>
 nnoremap <C-Delete>    :tabclose<CR>
 
 " open files always in new tabs
-autocmd VimEnter * tab all
-autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+"autocmd VimEnter * tab all
+"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+
+" for YouCompleteMe 
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
 
