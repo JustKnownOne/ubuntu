@@ -1,3 +1,5 @@
+
+
 " =========================
 " Vundle setting start
 " =========================
@@ -12,13 +14,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 " =========================
 " Vundle setting end
 " =========================
 
 "colo cobalt
-set langmenu=none
+"set langmenu=none
 set encoding=utf-8
 set fileencodings=utf-8,cp949
 lan mes ko_KR.utf8
@@ -33,31 +35,27 @@ if has("gui_running")
 	endif
 endif
 
+set title
+set backspace=2
+set ruler
 set number
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
 set wrap
 set linebreak
 set nobackup
-set ruler
 set visualbell
 syntax on
 
 hi CursorIM guibg=Purple guifg=Black
 
-set backspace=2
-
-set autoindent
-set smartindent
-set cindent
-
 set showcmd
 set showmatch
 
-set title
-
-set paste
+" tab setting. use <Tab> size is space 2
+set shiftwidth=2
+set tabstop=2
+" indent setting.
+set autoindent
+set cindent
 
 " tab navigation like firefox
 nnoremap <C-S-tab>     :tabprevious<CR>
@@ -79,7 +77,6 @@ nnoremap <C-Delete>    :tabclose<CR>
 
 " for YouCompleteMe 
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion = []
-let g:ycm_key_list_previous_completion = []
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
 
