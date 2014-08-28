@@ -1,10 +1,11 @@
-ubuntu
-======
+# ubuntu config file
 
-ubuntu config file
-
-08/27/2014
-- audacious equalizer preset
+## Vim
 - vimrc
+
+## Audacious
+- audacious equalizer preset
+
+## Etc
 - ms ttf font
 
