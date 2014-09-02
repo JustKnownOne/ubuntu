@@ -57,6 +57,10 @@ set tabstop=2
 set autoindent
 set cindent
 
+" open files always in new tabs
+"autocmd VimEnter * tab all
+"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+
 " tab navigation like firefox
 nnoremap <C-S-tab>     :tabprevious<CR>
 nnoremap <C-tab>       :tabnext<CR>
@@ -71,12 +75,16 @@ inoremap <C-PageUp>    <Esc>:tabprevious<CR>i
 nnoremap <C-Insert>    :tabnew<CR>
 nnoremap <C-Delete>    :tabclose<CR>
 
-" open files always in new tabs
-"autocmd VimEnter * tab all
-"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
-
 " for YouCompleteMe 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf="~/.vim/.ycm_extra_conf.py"
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
+" for UltiSnips
+let g:UltiSnipsUsePythonVersion=2
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDir="~/.vim/UltiSnips"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsListSnippets="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-s-j>"
 
