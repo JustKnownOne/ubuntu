@@ -1,0 +1,9 @@
+# vim working file #
+####################
+*.swp
+
+# editor backup file #
+######################
+*~
+
+
